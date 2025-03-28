@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security Training Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>ICS Cyber Security Training Platform</h1>
+    <p>Select a level to begin:</p>
+
+    <div class="level-container">
+        <a href="{{ url_for('level1') }}" class="level-button">Level 1: Scanning</a>
+        <a href="{{ url_for('level2') }}" class="level-button">Level 2: Flooding</a>
+        <a href="{{ url_for('level3') }}" class="level-button">Level 3: False Data Injection</a>
+        <a href="{{ url_for('dashboard') }}" class="level-button">Test dashboard</a>
+
+    </div>
+</body>
+</html>
