@@ -25,8 +25,8 @@ network_data = {
 }
 
 def start_mininet(level):
-    subprocess.run(
-        'tmux new -d -s mininet_session "sudo python3 minicps_simulation/level1_topology.py"',
+    subprocess.Popen(
+        f'sudo ./scripts/start_{level}.sh',
         shell=True
     )
 

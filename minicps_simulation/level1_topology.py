@@ -21,6 +21,8 @@ class SimpleAttackTopo(Topo):
         self.addLink(workstation, switch, intfName1='station-eth0', intfName2='s1-eth2')
         self.addLink(attacker, switch, intfName1='attacker-eth0', intfName2='s1-eth3')
 
+topos = { 'level1': ( lambda: SimpleAttackTopo() ) }
+
 def generate_topology_json():
     """Generate JSON representation of the Mininet topology."""
     topo = SimpleAttackTopo()

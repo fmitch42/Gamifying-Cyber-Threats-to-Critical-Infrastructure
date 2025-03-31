@@ -21,88 +21,9 @@
 
 </head>
 <body>
-    <h1>Level 1: Scanning</h1>
+    <h1>Tutorial</h1>
 
-    <div id="dashboard">
-        <div id="network">
-            <h2>Network Map</h2>
-
-            <script>
-                fetch('/topology')
-                  .then(response => response.json())
-                  .then(data => {
-                    console.log(data)
-                    // Create a data object for vis.js
-                    // Custom styling for nodes and edges
-                    const nodes = new vis.DataSet(data.nodes.map(node => {
-                    // Apply custom styling based on node types
-                    let nodeOptions = {
-                        id: node.id,
-                        label: node.label,
-                        shape: 'dot',
-                        size: 20,
-                        color: 'lightblue', // Default color
-                    };
-                    // Customize for different types of devices
-                    if (node.label === 'attacker') {
-                        nodeOptions.shape = 'square';
-                        nodeOptions.color = 'red';
-                    } else if (node.label === 'server') {
-                        nodeOptions.shape = 'ellipse';
-                        nodeOptions.color = 'green';
-                    } else if (node.label === 'workstation') {
-                        nodeOptions.shape = 'triangle';
-                        nodeOptions.color = 'blue';
-                    }
-                    return nodeOptions;
-                    }));
-
-                    const edges = new vis.DataSet(data.links.map(link => {
-                    return {
-                        from: link.source,
-                        to: link.target,
-                        width: 2, // default width for edges
-                        color: 'gray', // default color
-                    };
-                    }));
-
-                    const container = document.getElementById('network');
-                    const networkData = { nodes, edges };
-                    const options = {
-                    nodes: {
-                        font: {
-                        size: 16, // Adjust node label font size
-                        },
-                        borderWidth: 3, // Add border width for better visibility
-                    },
-                    edges: {
-                        smooth: { type: 'continuous' }, // Make edges smoothly connect
-                        arrows: {
-                        to: { enabled: true, scaleFactor: 1.2 }, // Add arrows to edges
-                        },
-                    },
-                    physics: {
-                        enabled: true, // Enable physics to move nodes naturally
-                        stabilization: true,
-                        barnesHut: {
-                        gravitationalConstant: -20000, // Gravity effect on nodes
-                        springLength: 200,
-                        springConstant: 0.04,
-                        },
-                    },
-                    };
-                    new vis.Network(container, networkData, options);
-                  })
-                  .catch(error => console.error('Error fetching topology:', error));
-            </script>                        
-        </div>
-
-        <div id="shop">
-            <h2>Shop</h2>
-            <button onclick="buyResource('Firewall')">Buy Firewall ($500)</button>
-            <button onclick="buyResource('IDS')">Buy Intrusion Detection ($300)</button>
-        </div>
-    </div>
+    <h3>Welcome to Cyber Sleuth! This tutorial will walk you through some of the main features of the game and present you with some simple objectives to complete.</h3>
 
     <script src="{{ url_for('static', filename='js/network.js') }}"></script>
     <script src="{{ url_for('static', filename='js/shop.js') }}"></script>
