@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tutorial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script>
+        window.addEventListener("beforeunload", ev => {
+            ev.preventDefault();
+            
+            ev.returnValue = "Are you sure you want to leave this level? Doing so will reset the simulation.";
+
+            navigator.sendBeacon('/stop_mininet'); // Stop Mininet when tab is closed
+        });
+    </script>
+    <style>
+        #network { width: 100%; height: 500px; border: 1px solid black; }
+    </style>
+
+</head>
+<body>
+    <h1>Tutorial</h1>
+
+    <h3>Welcome to Cyber Sleuth! This tutorial will walk you through some of the main features of the game and present you with some simple objectives to complete.</h3>
+
+    <div class="tutorial-container">
+        <div id="tutorial-content">
+            <p id="content-text">Welcome to the tutorial! Click next to begin.</p>
+        </div>
+        <div class="tutorial-controls">
+            <button id="prev-btn" onclick="prevPage()" disabled>← Previous</button>
+            <button id="next-btn" onclick="nextPage()">Next →</button>
+            <button id="finish-btn" onclick="finishTutorial()" style="display: none";>Finish</button>
+        </div>
+    </div>
+    
+    <!-- Include JavaScript -->
+    <script src="{{ url_for('static', filename='js/tutorial.js') }}"></script>
+
+</body>
+
+
+</html>
+{% endblock %}

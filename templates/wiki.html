@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Cyber Security Wiki{% endblock %}
+
+{% block content %}
+<div class="wiki-container">
+    <h1>Wiki</h1>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchBar" placeholder="Search for a section..." onkeyup="searchWiki()">
+
+    <!-- Wiki Sections -->
+    <div class="wiki-sections">
+
+        <div class="wiki-item">
+            <button class="collapsible">Denial of Service (DoS)</button>
+            <div class="collapsible-content">
+                <h3>Description</h3>
+                <p>A DoS attack floods a network or service with excessive traffic, causing disruption.</p>
+                <h3>Defensive Measures</h3>
+                <ul>
+                    <li>Implement rate limiting</li>
+                    <li>Use intrusion detection systems (IDS)</li>
+                    <li>Ensure scalable bandwidth</li>
+                </ul>
+                <h3>Example</h3>
+                <p>An attacker overloads a website with requests, making it unavailable to users.</p>
+            </div>
+        </div>
+
+        <div class="wiki-item">
+            <button class="collapsible">SQL Injection</button>
+            <div class="collapsible-content">
+                <h3>Description</h3>
+                <p>SQL Injection allows attackers to manipulate database queries by inserting malicious SQL code.</p>
+                <h3>Defensive Measures</h3>
+                <ul>
+                    <li>Use prepared statements</li>
+                    <li>Sanitize user inputs</li>
+                    <li>Restrict database permissions</li>
+                </ul>
+                <h3>Example</h3>
+                <p>A login form without input validation allows an attacker to bypass authentication.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/wiki.js') }}"></script>
+{% endblock %}

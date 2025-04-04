@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Security Training Game</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
-    <h1>ICS Cyber Security Training Platform</h1>
-    <p>Select a level to begin:</p>
+{% extends 'base.html' %}
 
-    <div class="level-container">
-        <a href="{{ url_for('level1') }}" class="level-button">Tutorial</a>
-        <a href="{{ url_for('level2') }}" class="level-button">Level 2: Flooding</a>
-        <a href="{{ url_for('level3') }}" class="level-button">Level 3: False Data Injection</a>
-        <a href="{{ url_for('dashboard') }}" class="level-button">Test dashboard</a>
+{% block title %}Cyber Sleuth{% endblock %}
 
-    </div>
-</body>
-</html>
+{% block content %}
+
+<div class="level-container">
+
+    <h1>Cyber Sleuth</h1>
+    <h3>Select a level to begin:</h3>
+    <a href="{{ url_for('tutorial') }}" class="level-button">Tutorial</a>
+    <a href="{{ url_for('basic') }}" class="level-button">Basic Mode</a>
+    <a href="{{ url_for('advanced') }}" class="level-button">Advanced Mode</a>
+    <a href="{{ url_for('wiki') }}" class="level-button">Wiki</a>
+
+</div>
+
+{% endblock %}
+

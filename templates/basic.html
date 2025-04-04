@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Level 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script>
+        window.addEventListener("beforeunload", ev => {
+            ev.preventDefault();
+            
+            ev.returnValue = "Are you sure you want to leave this level? Doing so will reset the simulation.";
+
+            navigator.sendBeacon('/stop_mininet'); // Stop Mininet when tab is closed
+        });
+    </script>
+    <style>
+        #network { width: 100%; height: 500px; border: 1px solid black; }
+    </style>
+
+</head>
+
+<body>
+    <h1>Basic: 🟢</h1>
+
+
+    
+</body>
+
+{% endblock %}

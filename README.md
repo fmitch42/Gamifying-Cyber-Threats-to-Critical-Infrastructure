@@ -4,6 +4,6 @@ This project aims to raise awareness of cyber threats to critical infrastructure
 
 System Requirements
 
-- tmux is required in order to run a mininet instance alongside the main application.
+- tmux is required for later levels in the game.
 
 - MiniNAM is also used to visualise the topology and requires to be run with python2

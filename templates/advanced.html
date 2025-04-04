@@ -1,9 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Level 1 - Threat Detection</title>
+    <title>Level 1</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
     <script>
@@ -20,12 +21,12 @@
     </style>
 
 </head>
+
 <body>
-    <h1>Tutorial</h1>
+    <h1>Advanced: 🟠</h1>
 
-    <h3>Welcome to Cyber Sleuth! This tutorial will walk you through some of the main features of the game and present you with some simple objectives to complete.</h3>
 
-    <script src="{{ url_for('static', filename='js/network.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/shop.js') }}"></script>
+    
 </body>
-</html>
+
+{% endblock %}

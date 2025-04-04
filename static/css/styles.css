@@ -3,7 +3,7 @@ body {
     text-align: center;
     background-color: #f4f4f4;
     padding: 20px;
-}
+}    
 
 h1 {
     color: #333;
@@ -30,3 +30,138 @@ h1 {
 .level-button:hover {
     background: #0056b3;
 }
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Tutorial Container */
+.tutorial-container {
+    max-width: 600px;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tutorial Content */
+#tutorial-content {
+    font-size: 18px;
+    min-height: 80px;
+}
+
+/* Wiki */
+
+.wiki-container {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#searchBar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.wiki-item {
+    margin-bottom: 10px;
+}
+
+.collapsible {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.collapsible:hover {
+    background-color: #555;
+}
+
+.collapsible-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #333;
+    /* display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #333; */
+}
+
+.collapsible-content.active {
+    max-height: 500px; 
+    opacity: 1;
+    padding: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Navigation Buttons */
+.tutorial-controls {
+    margin-top: 15px;
+}
+
+.tutorial-controls button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    margin: 5px;
+}
+
+.tutorial-controls button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+.tutorial-controls button:hover:not(:disabled) {
+    background: #0056b3;
+}
+
+
